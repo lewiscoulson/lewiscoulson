@@ -20,5 +20,13 @@
   <%= content_tag(:div, msg, class: "alert") %>
 <% end %>
 
+<% if user_signed_in? %>
+  <div class="buttons">
+    <button class="button"><%= link_to "New Post", new_post_path %></button>
+    <button class="button"><%= link_to "New Project", new_project_path %></button>
+    <button class="button"><%= link_to "Log out", destroy_user_session_path, :method => :delete %></button>
+  </div>
+<% end %>
+
 </body>
 </html>

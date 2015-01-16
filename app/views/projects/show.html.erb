@@ -17,3 +17,8 @@
 <div>
   <%= @project.placeholder %>
 </div>
+
+<% if user_signed_in? %>
+  <%= link_to('Edit', edit_project_path) %>
+  <%= link_to('Delete', project_path(@project), method: :delete, data: {confirm: 'are you sure?'}) %>
+<% end %>
